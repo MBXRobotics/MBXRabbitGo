@@ -1,1 +1,27 @@
 
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+MBXRabbitGo	KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+MBX_ROBOTICS_SETUP	KEYWORD2
+waitForStart	KEYWORD2
+forWard	KEYWORD2
+backWard	KEYWORD2
+turnLeft	KEYWORD2
+turnRight	KEYWORD2
+motorBegin	KEYWORD2
+motorStopAll	KEYWORD2
+servoWrite	KEYWORD2
+buzzerPlay	KEYWORD2
+rgbBegin	KEYWORD2
+ultrasonicRead	KEYWORD2
+
+#######################################
+# Constants (LITERAL1)
+#######################################
+MBX_OK	LITERAL1
+MBX_ERROR	LITERAL1
