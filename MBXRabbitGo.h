@@ -3,7 +3,6 @@
 #include "esp32-hal-gpio.h"
 #include "HardwareSerial.h"
 #include "MBX_ultrasonic.h"
-#include "MBX_dotmatrix.h"
 #include "MBX_GamePad.h"
 #include "MBX_buzzer.h"
 #include "MBX_motor.h"
