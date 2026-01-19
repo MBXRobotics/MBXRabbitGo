@@ -1,0 +1,154 @@
+#######################################
+# Syntax Coloring Map For MBXRabbitGo
+#######################################
+# Format:
+# KEYWORD<TAB>KEYWORD1/KEYWORD2/KEYWORD3/LITERAL1
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+MBXRabbitGo          KEYWORD1
+MotorConfig          KEYWORD1
+
+#######################################
+# Functions (KEYWORD2)
+#######################################
+MBXSetup             KEYWORD2
+
+# GamePad
+JoyController_Setup  KEYWORD2
+JoyController        KEYWORD2
+onConnectedGamepad   KEYWORD2
+onDisconnectedGamepad KEYWORD2
+
+# Buzzer
+playTone             KEYWORD2
+stopTone             KEYWORD2
+uploadDone           KEYWORD2
+playPartty           KEYWORD2
+glide                KEYWORD2
+playSpaceshipSound   KEYWORD2
+playPoliceSiren      KEYWORD2
+beep                 KEYWORD2
+playSong             KEYWORD2
+playBabyShark        KEYWORD2
+playHappyBirthday    KEYWORD2
+
+# GPIO
+analog               KEYWORD2
+digitalOpen          KEYWORD2
+digitalIn            KEYWORD2
+digitalIn_Pullup     KEYWORD2
+
+# Motor
+motorSetup           KEYWORD2
+speedToDuty          KEYWORD2
+motor                KEYWORD2
+forWard              KEYWORD2
+backWard             KEYWORD2
+turnLeft             KEYWORD2
+turnRight            KEYWORD2
+spinLeft             KEYWORD2
+spinRight            KEYWORD2
+motorStopAll         KEYWORD2
+
+# RGB
+rgb                  KEYWORD2
+rgbSetbrightness     KEYWORD2
+rgbSetColor          KEYWORD2
+rgbSetMixColorRGB    KEYWORD2
+rgbFillColor         KEYWORD2
+rgbFillRGB           KEYWORD2
+rgbRainbow           KEYWORD2
+theaterChaseRainbow  KEYWORD2
+rgbClear             KEYWORD2
+
+# Servo
+servoWrite           KEYWORD2
+
+# Ultrasonic
+waitForStart         KEYWORD2
+sw_Start             KEYWORD2
+ultrasonicSetup      KEYWORD2
+microsecondsToCentimeters KEYWORD2
+getDistance          KEYWORD2
+
+# LCD
+lcd                  KEYWORD2
+lcdShowMBXLogo       KEYWORD2
+wellcomeToMBX        KEYWORD2
+lcdClear             KEYWORD2
+vr                   KEYWORD2
+servoTest            KEYWORD2
+
+#######################################
+# Constants (KEYWORD3)
+#######################################
+# GamePad
+BP32_MAX_GAMEPADS    KEYWORD3
+
+# Buzzer
+BUZZER_PIN           KEYWORD3
+
+# GPIO pins
+A0                   KEYWORD3
+A1                   KEYWORD3
+A2                   KEYWORD3
+A4                   KEYWORD3
+D0                   KEYWORD3
+D1                   KEYWORD3
+
+# LCD / TFT
+TFT_CS               KEYWORD3
+TFT_DC               KEYWORD3
+TFT_RST              KEYWORD3
+TFT_SCLK             KEYWORD3
+TFT_MOSI             KEYWORD3
+VR                   KEYWORD3
+
+# Motor pins
+PWMA                 KEYWORD3
+AIN1                 KEYWORD3
+AIN2                 KEYWORD3
+PWMB                 KEYWORD3
+BIN1                 KEYWORD3
+BIN2                 KEYWORD3
+STBY                 KEYWORD3
+
+# RGB
+RGB_PIN_FRONT        KEYWORD3
+RGB_FRONT_COUT       KEYWORD3
+
+BLACK                KEYWORD3
+WHITE                KEYWORD3
+RED                  KEYWORD3
+GREEN                KEYWORD3
+BLUE                 KEYWORD3
+YELLOW               KEYWORD3
+MAGENTA              KEYWORD3
+CYAN                 KEYWORD3
+ORANGE               KEYWORD3
+LEMON                KEYWORD3
+PINK                 KEYWORD3
+NAVY                 KEYWORD3
+DARKGREEN            KEYWORD3
+DARKCYAN             KEYWORD3
+MAROON               KEYWORD3
+PURPLE               KEYWORD3
+OLIVE                KEYWORD3
+LIGHTGREY            KEYWORD3
+DARKGREY             KEYWORD3
+
+# Servo
+SERVO1_PIN           KEYWORD3
+SERVO_MIN_US         KEYWORD3
+SERVO_MAX_US         KEYWORD3
+
+# Ultrasonic
+TRIG_PIN             KEYWORD3
+ECHO_PIN             KEYWORD3
+SW                   KEYWORD3
+MAX_DISTANCE_CM      KEYWORD3
+TIMEOUT_US           KEYWORD3
+TRIGGER_PULSE_US     KEYWORD3
