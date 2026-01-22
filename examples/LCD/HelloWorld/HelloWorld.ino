@@ -2,13 +2,13 @@
 
 /* 
 
-oledClear();
-display.fillScreen(Color);
-display.setRotation(value);
-display.setCursor(x, y);
-display.setTextSize(value); 
-display.setTextColor(Color1, Color2);
-display.print(value);
+lcdClear();
+lcd.fillScreen(Color);
+lcd.setRotation(value);
+lcd.setCursor(x, y);
+lcd.setTextSize(value); 
+lcd.setTextColor(Color1, Color2);
+lcd.print(value);
 
 /* --------------------------------- TFT Color -----------------------------------
 
@@ -39,8 +39,8 @@ void setup() {
 }
 
 void loop() {
-  display.setTextSize(3);
-  display.setCursor(15, 120);
-  display.setTextColor(TFT_PURPLE);
-  display.println(String("Hello World"));
+  lcd.setTextSize(3);
+  lcd.setCursor(15, 120);
+  lcd.setTextColor(TFT_PURPLE);
+  lcd.println(String("Hello World"));
 }
