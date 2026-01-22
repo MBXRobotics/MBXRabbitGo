@@ -48,7 +48,7 @@ void loop() {
   delay(1000);
   rgbFillRGB(192, 192, 192);
   delay(1000);
-  showRainbow(20);
+  rgbRainbow(20);
   delay(1000);
   theaterChaseRainbow(20);
   delay(1000);
