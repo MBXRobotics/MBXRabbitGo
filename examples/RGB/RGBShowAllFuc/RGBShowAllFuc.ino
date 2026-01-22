@@ -7,7 +7,7 @@ rgbSetColor(pinNum, color);
 rgbSetMixColorRGB(pinNum, r, g, b);
 rgbFillColor(color);
 rgbFillRGB(r, g, b); 
-showRainbow(wait);
+rgbRainbow(wait);
 theaterChaseRainbow(wait);
 rgbClear();
 
