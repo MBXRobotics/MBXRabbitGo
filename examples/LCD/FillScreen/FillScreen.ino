@@ -28,10 +28,10 @@ void setup() {
 }
 
 void loop() {
-  display.fillScreen(TFT_RED);
+  lcd.fillScreen(TFT_RED);
   delay(1000);
-  display.fillScreen(TFT_GREEN);
+  lcd.fillScreen(TFT_GREEN);
   delay(1000);
-  display.fillScreen(TFT_BLUE);
+  lcd.fillScreen(TFT_BLUE);
   delay(1000);
 }
