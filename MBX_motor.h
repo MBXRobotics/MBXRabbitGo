@@ -7,25 +7,23 @@
 #define PWMA 25
 #define AIN1 17
 #define AIN2 19
-
 #define PWMB 26
 #define BIN1 5
 #define BIN2 14
-
 #define STBY 13
 
 /*----------------------------MOTOR CONFIGURATION-------------------------------------*/
 
-static const int motorPWMResolution = 12;    //  12-bit: 0..4095
-static const int maxMotorSpeed      = 4095;  //  12-bit max duty
-static const int pwmFrequency       = 20000; // 20kHz (quiet)
-
+static const int motorPWMResolution = 10;     // 10-bit: 0..1023 (FIXED from 12)
+static const int maxMotorSpeed      = 1023;   // 10-bit max duty (FIXED from 4095)
+static const int pwmFrequency       = 5000;   // 5kHz (FIXED from 20000)
 
 static const int PWM_CH_A = 0;
 static const int PWM_CH_B = 1;
 
-static const int MIN_DUTY = 900;  
+static const int MIN_DUTY = 200;   // FIXED from 900 to match new scale
 static const int DEADZONE = 5;   
+
 struct MotorConfig {
   int pwmPin;
   int pwmChannel;
@@ -49,15 +47,17 @@ static inline void motorSetup() {
   pinMode(PWMB, OUTPUT);
 
   pinMode(STBY, OUTPUT);
-  digitalWrite(STBY, HIGH);   
-
-  // stop state
+  
+  // Stop state first
   digitalWrite(AIN1, LOW);
   digitalWrite(AIN2, LOW);
   digitalWrite(BIN1, LOW);
   digitalWrite(BIN2, LOW);
-
-  delay(50);
+  digitalWrite(STBY, LOW);
+  
+  delay(100);
+  
+  // Setup PWM channels
   ledcSetup(PWM_CH_A, pwmFrequency, motorPWMResolution);
   ledcSetup(PWM_CH_B, pwmFrequency, motorPWMResolution);
 
@@ -67,7 +67,12 @@ static inline void motorSetup() {
   ledcWrite(PWM_CH_A, 0);
   ledcWrite(PWM_CH_B, 0);
 
-  delay(50);
+  delay(100);
+  
+  // Enable motor driver
+  digitalWrite(STBY, HIGH);
+  
+  delay(100);
 }
 
 /*----------------------------INTERNAL: SPEED -> DUTY--------------------------------*/
@@ -108,43 +113,49 @@ static inline void motor(int num, int speedM) {
     ledcWrite(cfg.pwmChannel, 0);
   }
 }
+
 /*---------------------------- MOTOR MOVEMENTS-------------------------------------*/
 static inline void forWard(int speedM) {
   speedM = constrain(speedM, 0, 100);
   motor(1, speedM);
   motor(2, speedM);
 }
+
 static inline void backWard(int speedM) {
   speedM = constrain(speedM, 0, 100);
   motor(1, -speedM);
   motor(2, -speedM);
 }
+
 static inline void turnLeft(int speedM) {
   speedM = constrain(speedM, 0, 100);
   motor(1, 0);
   motor(2, speedM);
 }
+
 static inline void turnRight(int speedM) {
   speedM = constrain(speedM, 0, 100);
   motor(1, speedM);
   motor(2, 0);
 }
+
 static inline void spinLeft(int speedM) {
   speedM = constrain(speedM, 0, 100);
   if (speedM < 35) speedM = 35;  
   motor(1, -speedM);
   motor(2,  speedM);
 }
+
 static inline void spinRight(int speedM) {
   speedM = constrain(speedM, 0, 100);
   if (speedM < 35) speedM = 35;  
   motor(1,  speedM);
   motor(2, -speedM);
 }
+
 static inline void motorStopAll(){
   ledcWrite(PWM_CH_A, 0);
   ledcWrite(PWM_CH_B, 0);
-
   digitalWrite(AIN1, LOW);
   digitalWrite(AIN2, LOW);
   digitalWrite(BIN1, LOW);
@@ -152,4 +163,4 @@ static inline void motorStopAll(){
   digitalWrite(STBY, HIGH);
 }
 
-#endif 
+#endif
