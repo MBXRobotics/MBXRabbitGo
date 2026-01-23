@@ -1,4 +1,4 @@
-#include "MBXRabbitGo.h"
+#include <MBXRabbitGo.h>
 
 void setup() {
   MBXSetup();  
