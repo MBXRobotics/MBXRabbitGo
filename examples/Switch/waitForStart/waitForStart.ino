@@ -6,5 +6,5 @@ void setup() {
 
 void loop() {
   waitForStart();
-  buzzer.beep();
+  beep();
 }
