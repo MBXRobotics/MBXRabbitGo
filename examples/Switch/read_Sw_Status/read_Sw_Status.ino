@@ -6,7 +6,7 @@ void setup() {
 
 void loop() {
   Serial.print("SW = ");
-  Serial.print(read_Sw_Status());
+  Serial.print(sw_Start());
   Serial.println("");
   delay(100);
 }
