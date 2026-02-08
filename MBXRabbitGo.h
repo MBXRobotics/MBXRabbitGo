@@ -10,6 +10,7 @@
 #include "MBX_lcd.h"
 #include "MBX_gpio.h"
 #include "MBX_rgb.h"
+#include "MBX_dotmatrix.h"
 
 void MBXSetup() {
   Serial.begin(115200);
@@ -21,4 +22,6 @@ void MBXSetup() {
   ultrasonicSetup();
   motorSetup();
   lcdClear();
+  dotmatrixSetup();
+  snk_reset();
 }
